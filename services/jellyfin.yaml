@@ -1,0 +1,20 @@
+services:
+  jellyfin:
+    image: ghcr.io/linuxserver/jellyfin
+    container_name: jellyfin
+    restart: always
+    ports:
+      - '8096:8096'
+    volumes:
+      - configjellyfin:/config
+      - torrents:/torrents
+    environment:
+      - PGID=${PGID}
+      - PUID=${PUID}
+      - TZ=${TZ}
+
+volumes:
+  configjellyfin:
+    driver: local-persist
+    driver_opts:
+      mountpoint: $HOST_CONFIG_PATH/jellyfin
