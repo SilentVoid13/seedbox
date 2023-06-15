@@ -1,0 +1,19 @@
+services:
+  jellyseerr:
+    image: fallenbagel/jellyseerr
+    container_name: jellyseerr
+    restart: always
+    ports:
+      - '5055:5055'
+    volumes:
+      - configjellyseerr:/app/config
+    environment:
+      - PGID=${PGID}
+      - PUID=${PUID}
+      - TZ=${TZ}
+
+volumes:
+  configjellyseerr:
+    driver: local-persist
+    driver_opts:
+      mountpoint: $HOST_CONFIG_PATH/jellyseerr
