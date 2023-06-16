@@ -26,4 +26,4 @@ volumes:
   configplex:
     driver: local-persist
     driver_opts:
-      mountpoint: $HOST_CONFIG_PATH/Plex
+      mountpoint: $HOST_CONFIG_PATH/plex
