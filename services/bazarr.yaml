@@ -3,6 +3,7 @@ services:
     image: ghcr.io/linuxserver/bazarr
     container_name: bazarr
     restart: always
+    network_mode: "host"
     volumes:
       - torrents:/torrents
       - configbazarr:/config

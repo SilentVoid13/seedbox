@@ -3,6 +3,7 @@ services:
     image: ghcr.io/linuxserver/radarr:develop
     container_name: radarr
     restart: always
+    network_mode: "host"
     volumes:
       - configradarr:/config
       - torrents:/torrents

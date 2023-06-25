@@ -3,6 +3,7 @@ services:
     image: ghcr.io/linuxserver/sonarr:develop
     container_name: sonarr
     restart: always
+    network_mode: "host"
     volumes:
       - configsonarr:/config
       - torrents:/torrents

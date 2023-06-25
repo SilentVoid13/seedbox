@@ -3,5 +3,6 @@ services:
     image: ghcr.io/flaresolverr/flaresolverr
     container_name: flaresolverr
     restart: always
+    network_mode: "host"
     environment:
       - CAPTCHA_SOLVER=hcaptcha-solver

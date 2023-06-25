@@ -3,8 +3,7 @@ services:
     image: ghcr.io/linuxserver/jellyfin
     container_name: jellyfin
     restart: always
-    ports:
-      - '8096:8096'
+    network_mode: "host"
     volumes:
       - configjellyfin:/config
       - torrents:/torrents

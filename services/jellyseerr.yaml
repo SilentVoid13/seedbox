@@ -3,8 +3,7 @@ services:
     image: fallenbagel/jellyseerr
     container_name: jellyseerr
     restart: always
-    ports:
-      - '5055:5055'
+    network_mode: "host"
     volumes:
       - configjellyseerr:/app/config
     environment:

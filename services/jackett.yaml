@@ -3,6 +3,7 @@ services:
     image: ghcr.io/linuxserver/jackett
     container_name: jackett
     restart: always
+    network_mode: "host"
     volumes:
       - configjackett:/config/Jackett
       - torrents:/downloads
