@@ -1,0 +1,18 @@
+services:
+  homarr:
+    image: ghcr.io/ajnart/homarr:latest
+    container_name: homarr
+    restart: always
+    network_mode: "host"
+    volumes:
+      - confighomarr:/config
+    environment:
+      - PGID=${PGID}
+      - PUID=${PUID}
+      - TZ=${TZ}
+
+volumes:
+  confighomarr: 
+    driver: local-persist
+    driver_opts:
+      mountpoint: $HOST_CONFIG_PATH/homarr
